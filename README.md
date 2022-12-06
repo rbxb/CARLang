@@ -44,7 +44,7 @@ rule conway
 
 states [DEAD, ALIVE]
 
-neighborhood function nbhd(x, y) abs(x) + abs(y) <= 1
+neighborhood function nbhd(x, y) abs(x) <= 1 && abs(y) <= 1 && (abs(x) + abs(y) != 0)
 
 initial state function init(x, y) x == 0 || x == grid_width - 1 || y == 0 || y == grid_height - 1 ? ALIVE : DEAD
 
