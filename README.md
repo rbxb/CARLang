@@ -2,7 +2,16 @@
 
 A notation language for defining Cellular Automata rules. Designed with the help of OpenAI's ChatGPT. A manuscript of the original conversation can be found [here](chat_manuscript.md).
 
+## Note from Human
+
+The goal of CARLang is to logically represent a cellular automaton rule. CARL is designed to be human-readable. As a result of ChatGPT's influence, some of the syntax is a little weird. The AI's use of keywords is questionable, but I decided to leave most of the quirks in.
+
+Some of the examples that the AI produces probably would not be very interesting if you were to compute them. They are purely here to demonstrate the syntax.  
+If you notice any inconsistencies or errors while reading this, please let me know or create an issue. Thanks!
+
 _Most of the following text was written by ChatGPT_
+
+________
 
 **CARL (Cellular Automaton Rules Language)** is a notation for defining the rules and behavior of cellular automata. It allows users to specify the possible states of cells, the shape and size of the neighborhoods used to calculate transitions, and the conditions and actions that determine how cells transition between states. The notation uses a simple, intuitive syntax that allows users to easily define complex rules for cellular automata. It is designed to be flexible and extensible, allowing users to define custom functions and conditions for use in transition rules. CARL is intended to provide a standard, consistent way of defining cellular automata, enabling users to easily create and share their own cellular automaton rules.
 
@@ -53,6 +62,28 @@ This conway rule defines the rules of Conway's Game of Life. The states section 
     A cell that is DEAD with exactly 3 ALIVE neighbors becomes ALIVE
 
 Together, these rules define the behavior of Conway's Game of Life.
+
+#### 1D Cellular Automata
+
+We can define a 1D cellular automaton like this:
+
+```carl
+rule my_1D_automaton
+
+states [DEAD, ALIVE]
+
+neighborhood function nbhd(x) abs(x) == 1
+
+initial state function init(x) x == 0 || x == grid_width - 1 ? ALIVE : DEAD
+
+transition (ALIVE -> DEAD) count(nbhd where ALIVE) < 2
+transition (DEAD -> ALIVE) count(nbhd where ALIVE) == 2
+```
+
+This rule defines a 1D cellular automaton. The neighborhood is defined as the two cells adjacent to the current cell. The transition functions apply the following rules:
+
+    A cell that is ALIVE with less than 2 ALIVE neighbors becomes DEAD
+    A cell that is DEAD with exactly 2 ALIVE neighbors becomes ALIVE
 
 #### Multiple Neighborhood Cellular Automata
 
