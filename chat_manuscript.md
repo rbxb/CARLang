@@ -1,11 +1,3 @@
----
-title: User
-created: '2022-12-06T00:47:57.566Z'
-modified: '2022-12-06T01:13:28.964Z'
----
-
-
-
 #### User
 > Are you familiar with cellular automaton?
 
