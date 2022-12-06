@@ -1,0 +1,12 @@
+rule conway
+
+states [DEAD, ALIVE]
+
+neighborhood function nbhd(x, y) abs(x) + abs(y) <= 1
+
+initial state function init(x, y) x == 0 || x == grid_width - 1 || y == 0 || y == grid_height - 1 ? ALIVE : DEAD
+
+transition (ALIVE -> DEAD) count(nbhd where ALIVE) < 2
+transition (ALIVE -> ALIVE) count(nbhd where ALIVE) == 2 || count(nbhd where ALIVE) == 3
+transition (ALIVE -> DEAD) count(nbhd where ALIVE) > 3
+transition (DEAD -> ALIVE) count(nbhd where ALIVE) == 3
