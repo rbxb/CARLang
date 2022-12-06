@@ -1,6 +1,6 @@
 # CARLang
 
-A notation language for defining Cellular Automata rules. Designed with the help of OpenAI's ChatGPT. A manuscript of the original conversation can be found [here](chat_manuscript.md).
+A notation language for defining Cellular Automata rules. Designed with the help of OpenAI's ChatGPT. A transcript of the original conversation can be found [here](chat_transcript.md).
 
 ## Note from Human
 
