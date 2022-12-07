@@ -2,6 +2,8 @@
 
 A notation language for defining Cellular Automata rules. Designed with the help of OpenAI's ChatGPT. A transcript of the original conversation can be found [here](chat_transcript.md).
 
+<img src="carl.png" height="256" width="256" title="The Birth of CARL">
+
 ## Note from Human
 
 The goal of CARLang is to logically represent a cellular automaton rule. CARL is designed to be human-readable. As a result of ChatGPT's influence, some of the syntax is a little weird. The AI's use of keywords is questionable, but I decided to leave most of the quirks in.
